@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/wiki_main_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.wikisearch.samsruti.ui.main.WikiPagesListFragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_wikiDetails"
+            app:destination="@id/wikiDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/wikiDetails"
+        android:name="com.wikisearch.samsruti.ui.details.WikiDetailsFragment"
+        tools:layout="@layout/wiki_details_fragment" >
+        <argument
+            android:name="page"
+            app:argType="com.wikisearch.samsruti.api.PageDomainModel" />
+    </fragment>
+</navigation>
